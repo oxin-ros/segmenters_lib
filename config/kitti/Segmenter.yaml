@@ -5,7 +5,7 @@ detect: {
         # default: 60.0,999.0,999.0 in SegMatch
         # default: "Cylinder"(0,60)
         roi_type: "Cylinder",
-        #roi_type: "Square",
+        # roi_type: "Square",
         # ROI filter needs lidar installed height
         roi_lidar_height_m: 1.73,
         ## Horizontal range
@@ -13,8 +13,8 @@ detect: {
         roi_radius_min_m: 2.,
         roi_radius_max_m: 120.,
         #--- for "Square"
-        #roi_radius_min_m: 15.,
-        #roi_radius_max_m: 120.,
+        # roi_radius_min_m: 15.,
+        # roi_radius_max_m: 120.,
         # Vertical range
         roi_height_below_m: 1.,
         roi_height_above_m: 20.,
@@ -38,8 +38,8 @@ detect: {
         ## number of points used to estimate the lowest point representative(LPR)
         # double of senser model???
         #gpf_num_lpr: 20,
-        gpf_num_lpr: 128,
-        #gpf_num_lpr: 1280,
+        #gpf_num_lpr: 128,
+        gpf_num_lpr: 1280,
         gpf_th_lprs: 0.08,
         # threshold for points to be considered initial seeds
         gpf_th_seeds: 0.1,
@@ -51,7 +51,7 @@ detect: {
         ### Ground RANSAC Segmenter
         # 0.3 for better perforamce
         ## default: 0.3
-        sac_distance_threshold: 0.2,
+        sac_distance_threshold: 0.5,
         ## default: 100
         sac_max_iteration: 100,
         ## default: 0.99

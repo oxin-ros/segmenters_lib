@@ -8,7 +8,7 @@
 
 #include <pcl/ModelCoefficients.h>              // pcl::ModelCoefficients
 #include <pcl/filters/extract_indices.h>        // pcl::ExtractIndices
-#include <pcl/io/io.h>                          // pcl::copyPointCloud
+#include <pcl/common/io.h>                           // pcl::copyPointCloud
 #include <pcl/sample_consensus/method_types.h>  // pcl::SAC_RANSAC
 #include <pcl/sample_consensus/model_types.h>   // pcl::SACMODEL_PLANE
 

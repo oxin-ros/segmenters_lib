@@ -7,7 +7,7 @@
 #include <ros/ros.h>
 
 #include <pcl/filters/extract_indices.h>  // pcl::ExtractIndices
-#include <pcl/io/io.h>                    // pcl::copyPointCloud
+#include <pcl/common/io.h>                     // pcl::copyPointCloud
 
 #include "common/common.hpp"  // common::sortByAxisZAsc
 #include "common/time.hpp"    // common::Clock

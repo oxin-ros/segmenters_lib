@@ -5,6 +5,7 @@
 #include "segmenters/don_segmenter.hpp"
 #include <ros/ros.h>
 #include "common/time.hpp"
+#include "pcl/common/io.h"
 
 namespace autosense {
 namespace segmenter {
@@ -100,15 +101,15 @@ void DoNSegmenter::segment(const PointICloud &cloud_in,
     ec_extractor_.setSearchMethod(kd_tree_seg_);
     ec_extractor_.setInputCloud(don_cloud_filtered);
     ec_extractor_.extract(clusters_indices);
-    std::vector<pcl::PointIndices>::const_iterator iter =
-        clusters_indices.begin();
-    for (; iter != clusters_indices.end(); ++iter) {
-        PointICloudPtr cluster(new PointICloud);
-        pcl::copyPointCloud<PointN, PointI>(*don_cloud_filtered, *iter,
-                                            *cluster);
-
-        cloud_clusters.push_back(cluster);
+    PointICloudPtr cluster_cloud(new PointICloud);
+    for (auto& cluster_indicies : clusters_indices) {
+        pcl::copyPointCloud(
+            *don_cloud_filtered,
+            cluster_indicies,
+            *cluster_cloud);
+        cloud_clusters.push_back(cluster_cloud);
     }
+
 
     ROS_INFO_STREAM("Segmentation complete. Took " << clock.takeRealTime()
                                                    << "ms.");

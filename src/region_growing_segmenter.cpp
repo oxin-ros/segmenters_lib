@@ -3,6 +3,7 @@
  * Gary Chan <chenshj35@mail2.sysu.edu.cn>
  */
 #include "segmenters/region_growing_segmenter.hpp"
+#include "pcl/common/io.h"
 
 #include "common/time.hpp"
 

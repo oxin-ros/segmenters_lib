@@ -115,7 +115,7 @@ void RegionEuclideanSegmenter::segment(
         // avoid useless Euclidean Cluster Extraction
         if (nested_regions[region].size() > params_.rec_min_cluster_size) {
             // <2> different distance thresholds are applied
-            boost::shared_ptr<std::vector<int> > region_indices(
+            std::shared_ptr<std::vector<int> > region_indices(
                 new std::vector<int>(nested_regions[region]));
 
             std::vector<pcl::PointIndices> clusters_indices;
